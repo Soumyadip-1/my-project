@@ -1,0 +1,16 @@
+form{
+    background-color: beige;
+    width: 300px;
+    height: 450px;
+    border: 30px ridge blue;
+    padding: 30px;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+}
+body{
+    background-color: teal;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
