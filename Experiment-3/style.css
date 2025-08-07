@@ -1,0 +1,87 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark-toggle {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #e5e5e5;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: purple;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+}
+
+.footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark-mode .header {
+  background-color: #222;
+}
+
+body.dark-mode .footer {
+  background-color: #222;
+}
+
+body.dark-mode .sidebar {
+  background-color: #333;
+}
+
+body.dark-mode .sidebar ul li a {
+  color: #a287f4;
+}
+
+body.dark-mode .main-content {
+  background-color: #000;
+  color: white;
+}
