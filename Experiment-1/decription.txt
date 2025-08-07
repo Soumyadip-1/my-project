@@ -1,0 +1,25 @@
+Description of Student Registration Form Webpage
+This project is a Student Registration Form webpage built using HTML and CSS. It is designed to collect basic user details such as name, email, and age, and is styled for a neat and professional appearance.
+
+Structure and Functionality (HTML):
+The HTML part of the project includes:
+A clear heading titled "STUDENT REGISTRATION FORM".
+Two identical forms, each containing:
+A text field to enter the student's name (limited to 15 characters).
+An email input for the student’s email address (limited to 40 characters).
+A number input for age, accepting values between 0 and 90.
+Two buttons: one to submit the form (Register) and another to reset the form fields (Reset).
+All fields are marked as required, ensuring users must fill in the form before submission.
+
+Styling and Layout (CSS):
+The design of the webpage is achieved through an external CSS file with the following features:
+
+The body of the page:
+Has a background color of teal.
+Uses Flexbox with horizontal layout (row direction), spacing the two forms evenly across the page.
+Each form:
+Has a background color of beige, creating a soft contrast with the teal background.
+Is sized to a fixed width of 300px and height of 450px.
+Surrounded by a 30px blue ridge border, giving it a raised and decorated look.
+Includes 30px of padding inside the form and 100px of margin outside for proper spacing.
+Uses Flexbox layout in column direction to align form fields vertically.
