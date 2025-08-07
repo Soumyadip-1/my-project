@@ -1,0 +1,7 @@
+Description of Responsive Banking UI:
+This project is a simple yet visually appealing Responsive Banking User Interface (UI) designed using HTML and CSS. The interface presents a minimal banking card that displays a balance and provides two primary actions: Deposit and Withdraw.
+
+Final Outcome:
+The final result is a clean, centered, and responsive banking interface that works well on both desktop and mobile devices. While it currently displays a static balance, it is perfectly structured for future functionality with JavaScript (e.g., updating balance, handling transactions).
+
+This UI serves as a foundational layout for building interactive banking or finance web applications.
