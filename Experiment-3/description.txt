@@ -1,4 +1,4 @@
-This project is a modern, responsive Admin Dashboard designed using HTML, CSS, and JavaScript.
+This project is a modern, responsive Admin Dashboard designed using HTML and CSS.
 It includes a fixed header with a title and a functional Dark Mode toggle, a sidebar for navigation (Home, Users, Settings)
 a main content section displaying a welcome message, and a footer showing the copyright.
 The layout is structured using Flexbox for a clean and adaptive design that works well on various screen sizes.
@@ -6,11 +6,8 @@ The Dark Mode feature allows users to switch between light and dark themes for b
 This dashboard can be extended to manage users, view analytics, or control system settings.
 
 
-
 Final Output
 The resulting page is a simple, professional-looking admin dashboard with:
 A fixed layout,
 Responsive content structure,
 And a Dark Mode toggle to enhance user experience.
-
-I use html and css for styling
