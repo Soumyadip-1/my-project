@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Dark Mode</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="dashboard">
-    <header class="header">
-      <h1>Admin Dashboard</h1>
-      <label class="dark-toggle">
-        <input type="checkbox" id="modeToggle" />
-        Dark Mode
-      </label>
-    </header>
+    <div class="dashboard">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <div class="theme-toggle">
+                <label>
+                    <input type="checkbox" id="switchtheme">
+                    Dark Mode
+                </label>
+            </div>
+        </header>
 
-    <div class="container">
-      <aside class="sidebar">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Users</a></li>
-          <li><a href="#">Settings</a></li>
-        </ul>
-      </aside>
+        <nav>
+            <a href="#">Home</a><br>
+            <a href="#">Users</a><br>
+            <a href="#">Settings</a><br>
+        </nav>
 
-      <main class="main-content">
-        <h2>Welcome, Admin!</h2>
-        <p>This is the main content area. Add charts, tables, or reports here.</p>
-      </main>
+        <main>
+            <h2>Welcome, Admin!</h2>
+            <p>This is the main content area. Add charts, tables, or reports here.</p>
+        </main>
+
+        <footer>
+            © 2025 Admin Panel
+        </footer>
     </div>
-
-    <footer class="footer">
-      © 2025 Admin Panel
-    </footer>
-  </div>
-
-  <script>
-    const toggle = document.getElementById('modeToggle');
-    toggle.addEventListener('change', function () {
-      document.body.classList.toggle('dark-mode', this.checked);
-    });
-  </script>
 </body>
 </html>
