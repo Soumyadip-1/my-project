@@ -1,9 +1,15 @@
-This project is a modern, responsive Admin Dashboard designed using HTML and CSS.
-It includes a fixed header with a title and a functional Dark Mode toggle, a sidebar for navigation (Home, Users, Settings)
-a main content section displaying a welcome message, and a footer showing the copyright.
-The layout is structured using Flexbox for a clean and adaptive design that works well on various screen sizes.
-The Dark Mode feature allows users to switch between light and dark themes for better accessibility and user comfort.
-This dashboard can be extended to manage users, view analytics, or control system settings.
+This HTML and CSS code creates a responsive Admin Dashboard with a light/dark mode toggle using pure CSS variables and the :has() selector.
+
+The HTML defines a .dashboard container structured into three main sections:
+Header: Spans the full width, containing the dashboard title and a theme toggle checkbox.
+Navigation (nav): A vertical menu on the left with simple links.
+Main: A content area for admin-related information.
+Footer: Spans the bottom across both columns with copyright text.
+The CSS starts by defining CSS custom properties (--bg-header, --bg-main, etc.) in the :root for colors and text. The layout uses CSS Grid (grid-template-columns: 200px auto;) to divide navigation and content areas. Flexbox is used inside the header for proper alignment.
+
+The dark theme is applied when .dashboard has the checkbox #switchtheme checked. The :has() selector updates the custom properties to darker tones, instantly changing the theme without JavaScript.
+
+The .theme-toggle styles the label and checkbox with proper spacing and cursor interaction. The navigation, footer, and main content all inherit background and text colors from the variables, ensuring consistent theme switching across the interface.
 
 
 Final Output
@@ -11,3 +17,4 @@ The resulting page is a simple, professional-looking admin dashboard with:
 A fixed layout,
 Responsive content structure,
 And a Dark Mode toggle to enhance user experience.
+
