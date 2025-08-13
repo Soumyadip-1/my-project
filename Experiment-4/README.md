@@ -28,7 +28,7 @@ Updating the count
 textInput.value.length calculates the total characters in the textarea.
 charCount.textContent = ... updates the number displayed on the page instantly.
 
-💡 Summary:
+ Summary:
 
 HTML is the skeleton — it sets up the structure.
 
