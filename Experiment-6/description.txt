@@ -1,0 +1,6 @@
+Interactive SVG Drawing Tool
+This project is a web-based drawing application that provides users with an interactive canvas to create shapes using their mouse. Built with SVG (Scalable Vector Graphics) and vanilla JavaScript, the tool demonstrates a practical application of DOM manipulation and advanced event handling.
+
+The core of the application is an SVG canvas where users can draw shapes, such as lines or rectangles, in real-time. The drawing process is intuitive: the user simply clicks down, drags the mouse to define the shape's size and position, and releases the mouse button to finalize the drawing. This interaction is powered by a set of carefully orchestrated mouse event handlers (mousedown, mousemove, and mouseup) that create, update, and place SVG elements dynamically onto the canvas. Users can draw multiple shapes on the canvas, with each action handled seamlessly by JavaScript without requiring any page reloads.
+
+The primary objective of this project is to deepen the understanding of how to build interactive, client-side web applications. It focuses on the direct manipulation of SVG elements through JavaScript and highlights the importance of state management during user interactions like dragging.
