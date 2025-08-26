@@ -1,0 +1,32 @@
+In this project, I created a web-based product filtering system where users can easily view products by selecting a category from a dropdown menu. The product list updates dynamically using JavaScript DOM manipulation without reloading the page.
+
+How it works:
+
+All products (Shoes, Shirts, Gadgets) are stored inside a JavaScript array of objects.
+
+On page load, all products are displayed in a neat card/grid layout.
+
+When a user selects a category (e.g., Shoes), only the matching products are displayed.
+
+Selecting “All” brings back the full product list.
+
+UI Enhancements:
+
+Products are shown in individual card-style boxes with borders and hover effects.
+
+The layout is responsive, arranged in a grid for better readability.
+
+The dropdown has a clean design with focus and hover highlights.
+
+Learning Outcome:
+Through this project, I practiced:
+
+JavaScript arrays & filtering
+
+DOM manipulation (innerHTML, createElement, appendChild)
+
+Event handling (change event on dropdown)
+
+CSS styling for grid layouts, card design, and hover animations
+
+This project helped me strengthen my understanding of how JavaScript interacts with HTML & CSS to create a smooth, real-time user experience.
