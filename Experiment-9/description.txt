@@ -1,0 +1,69 @@
+HTML (Structure of the Webpage)
+
+The HTML file defines the basic skeleton of the webpage.
+
+At the top, there is a title heading (Person Class Hierarchy with Student and Teacher Subclasses) and a short description paragraph. This tells the user what the page is about.
+
+Below that, there’s a container (<div id="output">) which is initially empty. This is where the JavaScript will inject the results of the program — specifically, the details of the Student and Teacher objects.
+
+The HTML also links to the CSS file for styling and the JavaScript file for behavior.
+
+This structure keeps the HTML clean and minimal. The main content (the class hierarchy demonstration) is generated dynamically with JavaScript rather than being hardcoded in the HTML.
+
+🔹 CSS (Design & Layout)
+
+The CSS ensures the page looks clean and professional.
+
+The body uses a light gray background and centers the main container in the page with padding.
+
+The container box has a white background, rounded corners, and a subtle shadow. This makes the content feel like a card, separated from the background.
+
+The heading is centered and styled in a dark color to stand out.
+
+The output box has its own border, light background, and padding. This makes the results easy to read and visually distinct from the description text.
+
+Each output line (the information about a student or teacher) is displayed as a separate paragraph for clarity.
+
+The styling doesn’t just make it attractive — it also improves readability and user experience.
+
+🔹 JavaScript (Core Functionality & Inheritance)
+
+The JavaScript demonstrates the real object-oriented programming (OOP) concepts.
+
+Base Class – Person
+
+Defines two properties: name and age.
+
+Includes a method displayInfo() that returns a string with the person’s name and age.
+
+Student Subclass
+
+Inherits from Person using the extends keyword.
+
+Adds an extra property: grade (or course).
+
+Overrides the displayInfo() method: it first calls the parent method using super.displayInfo(), then adds the grade information.
+
+Teacher Subclass
+
+Also inherits from Person.
+
+Adds a property: subject (or department).
+
+Overrides the displayInfo() method in the same way, extending it with subject information.
+
+Creating Instances
+
+Two Student objects and two Teacher objects are created with different values.
+
+All objects are stored in an array.
+
+Displaying Output
+
+The program loops over the array of people.
+
+For each object, it calls the overridden displayInfo() method and inserts the result into the HTML output box.
+
+Because of inheritance, each object knows how to display its own details correctly, even though they all share the same base class.
+
+This demonstrates inheritance, method overriding, and reusability of code in JavaScript.
