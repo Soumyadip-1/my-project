@@ -1,0 +1,60 @@
+HTML (Structure of the Page)
+
+The HTML file is the foundation of the application. It defines the basic layout and the elements that the user interacts with.
+
+At the top, there’s a container box with the heading Library Management. This acts as the main section for the entire app.
+
+Inside the container, there are two main functional areas:
+
+Search bar → An input box where the user can type keywords (either book titles or author names). This is directly linked with the JavaScript search function, which updates the displayed books as the user types.
+
+Add new book section → This contains two input fields (one for book title and one for author) plus an “Add Book” button. This lets users add new items to the library dynamically.
+
+Finally, there’s a book list area — an empty <div> where all books are displayed. JavaScript fills this section by creating book “cards” on the fly.
+
+The HTML is minimal by itself but designed for maximum flexibility. The real functionality comes from the CSS (for looks) and JavaScript (for behavior).
+
+🔹 CSS (Visual Design & Layout)
+
+The CSS makes the app look neat, structured, and user-friendly.
+
+The library container has a black border, padding, and spacing so that everything inside looks like a dedicated section. This makes it visually distinct from the page background.
+
+The heading is styled bold and clear at the top of the section.
+
+Input fields are styled with padding and margin so they don’t overlap or look cramped. They are wide enough for comfortable typing.
+
+The Add Book section arranges the two input fields and the button in a horizontal row, so users can quickly type and add books in one go.
+
+Each book is displayed inside a book item card. These cards:
+
+Have a light border and rounded corners.
+
+Include padding and margin so that books don’t stick to each other.
+
+Use a subtle gray background to make them stand out.
+
+The Remove button is aligned to the right of each book card, making it easy to delete any book at any time.
+
+This styling ensures that the app not only works but also feels organized and easy to use.
+
+🔹 JavaScript (Functionality & Behavior)
+
+JavaScript powers the entire interactivity of this Library Management system.
+
+Initial Book List
+The script starts with a predefined array of books (like 1984, The Great Gatsby, and To Kill a Mockingbird). Each book is represented as an object with title and author properties.
+
+Render Function
+A central function (renderBooks) is responsible for displaying books on the page. It clears the book list area and then loops through the array of books, creating a new card for each. This function also applies the search filter: only books that match the search text (in either title or author) are displayed.
+
+Adding Books
+When the user types a title and an author into the input fields and clicks “Add Book,” JavaScript creates a new object, pushes it into the array, and re-renders the book list. This makes the new book appear instantly.
+
+Removing Books
+Each card includes a “Remove” button. Clicking this button removes the corresponding book from the array and refreshes the list, so the book disappears right away.
+
+Search Functionality
+The search bar listens for input events. Whenever the user types something, the app filters the array and re-renders only the matching books. For example, typing “great” will only show The Great Gatsby.
+
+This JavaScript logic makes the app dynamic. Instead of hardcoding book entries in HTML, it relies on data (the array of books) and keeps the interface in sync with that data.
