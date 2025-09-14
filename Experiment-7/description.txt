@@ -1,0 +1,29 @@
+HTML (structure & semantics)
+
+The HTML file is the skeleton that defines the page’s content and semantic layout. At the top there’s the usual document meta (doctype, language, charset, viewport) to ensure proper rendering and mobile responsiveness. The visible page content is organized into a compact product filter UI: a container area with a heading, a label describing the filter, a <select> dropdown for choosing a category, and a dedicated element that will hold the product list. That product-list container is intentionally minimal — it acts as the target node where JavaScript inserts or replaces product items dynamically.
+
+Semantically this is straightforward and accessible: the <select> control is wrapped in a label so assistive tech can associate the control with its description, and the list of products is rendered into a single container element (a div or ul depending on the implementation). Including the meta viewport and lang attributes ensures better accessibility and internationalization. The HTML also includes a small inline style block for quick demo styling and a script block for immediate behavior, but the main styling and scripting are provided in separate files (see CSS and JS sections). The separation keeps the HTML focused on content and structure while delegating presentation and behavior to their respective layers. 
+
+index
+
+CSS (visual design & interaction cues)
+
+The CSS file provides the visual language of the page: typography, spacing, borders, and subtle interactive states. The top-level rules set a readable font stack, comfortable line-height, and a neutral color palette; that forms the baseline for all components. A centered container with a max-width constrains the content width so the product list looks tidy on larger screens while remaining responsive on phones.
+
+Component-level styles include a title area with a bold weight and a subtle border-bottom to separate the header from the controls. The filter area is visually grouped using a bordered box with slight padding and a light background — this creates an obvious affordance that the dropdown and list belong together. Form controls like the select are given padding and rounded corners to improve touch targets and visual balance.
+
+Product items are styled as list entries with borders, rounded corners, and hover feedback (slight background change). That hover state is an important micro-interaction: it gives the user an immediate cue that the item is a discrete element and helps scanning. The CSS also uses transitions to smooth the hover effect which makes the interface feel more refined.
+
+Importantly, styles are organized so the page works without JavaScript: even if dynamic population fails, the static layout still looks presentable. This layered approach (HTML → CSS → JS) ensures progressive enhancement — the CSS improves readability and usability regardless of device or script support. 
+
+style
+
+JavaScript (behavior, dynamic rendering & interactivity)
+
+JavaScript is where the product-filter functionality comes to life. The script defines a plain array of product objects where each object contains a name and a category. This small in-memory dataset is perfect for demonstration: it keeps the logic simple and decouples the UI from any remote data source.
+
+On page load the script grabs references to two DOM nodes: the dropdown control (the filter selector) and the container that will display products. The core behavior is a render function that accepts a category argument. That function empties the product container, filters the products array according to the selected category (or returns the whole array when an “all” option is selected), then iterates the resulting list and appends a DOM element for each product. This approach — clear separation of the data model (products array), the view updater (render function), and the event handler — keeps the code easy to reason about and debug.
+
+The script also sets an initial render so the page shows all products by default. Finally, an event listener is attached to the dropdown: when the user picks a different category, the listener calls the render function with the new value. Because the DOM updates are incremental and targeted (we only replace the inner content of the product container), the UI updates are fast and flicker-free on modern devices.
+
+There are a few practical enhancements you could add without complicating the design: normalize category capitalization for robust filtering, add keyboard accessibility cues, show a lightweight “no products” message when the filter yields zero results, or animate the insertion of list items for a sleeker feel. The current script already includes a fallback display message when a category has no items — a tiny but useful UX detail.
