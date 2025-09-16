@@ -1,0 +1,17 @@
+In this project, I created a reusable ProductCard component in React. The component displays product details such as name, price, and stock status, and these details are passed using props.
+
+At first, I learned how to create a simple component and render it by passing data individually through props. Later, I improved the code by creating an array of products and using the JavaScript map() function to loop through the array and dynamically render multiple ProductCard components.
+
+This approach made the code cleaner, reusable, and more scalable. Instead of writing multiple <ProductCard /> tags manually, I just updated the product array, and the UI automatically displayed all the products.
+
+Key Learnings
+
+Props in React – I understood how props allow us to pass dynamic data into components.
+
+Reusable Components – Once a component is made, it can be reused multiple times with different data.
+
+JSX vs JS – I learned how JSX lets us write HTML-like code inside JavaScript for React components.
+
+map() in React – Instead of hardcoding, I can loop through an array and render a list of components dynamically.
+
+Clean & Scalable Code – With arrays + map, the app is easier to maintain, especially when dealing with many products.
