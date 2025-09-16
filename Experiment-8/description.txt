@@ -1,0 +1,19 @@
+Project: Library Management App (React)
+
+In this experiment, I created a Library Management system using React.
+
+Features:
+1. Search books by title or author.
+2. Add new books by entering title and author.
+3. Remove books from the list.
+4. Dynamic rendering of books using map().
+
+Learnings:
+- How to use useState for managing dynamic data.
+- Passing props to child components (BookList).
+- Using map() to render lists in React.
+- Implementing search and filter functionality.
+- Styling components with CSS.
+
+This project helped me understand the core concepts of React such as
+state, props, dynamic rendering, and event handling.

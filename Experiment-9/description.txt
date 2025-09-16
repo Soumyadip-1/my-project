@@ -1,0 +1,32 @@
+Title: Person Class Hierarchy with Student and Teacher Subclasses
+
+Objective:
+The goal of this experiment was to understand and apply the concept of inheritance in JavaScript (ES6 classes) inside a React project. We created a base class (Person) and extended it into specialized subclasses (Student and Teacher). This demonstrates object-oriented programming concepts such as inheritance, method overriding, and reusability in a modern JavaScript context.
+
+Description of Work:
+
+A Person class was created with properties name and age, and a method getInfo() to display basic information.
+
+A Student class was created by extending Person. It added a new property grade and overrode the getInfo() method to include grade details.
+
+A Teacher class was also created by extending Person. It added a new property subject and overrode the getInfo() method to include subject details.
+
+These classes were written inside Person.jsx in the components folder.
+
+In App.jsx, multiple instances of Student and Teacher were created and their getInfo() methods were called to display complete details.
+
+Styling for the output was provided in App.css to show the information in a neat card layout.
+
+Finally, the app was rendered using main.jsx.
+
+Learning Outcomes:
+
+Learned how to define and use ES6 classes in JavaScript.
+
+Understood the concept of inheritance and how subclasses extend base classes.
+
+Practiced method overriding using super to call parent methods and extend functionality.
+
+Learned how to organize code into multiple files (App.jsx, Person.jsx, App.css, main.jsx) in a React project.
+
+Understood the importance of modular design and reusability in software development.
