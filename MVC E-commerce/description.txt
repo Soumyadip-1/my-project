@@ -1,0 +1,76 @@
+E-commerce Catalog with Nested Documents
+Objective
+
+To design and implement a product catalog in MongoDB using nested documents to efficiently represent product variants (such as color, size, and stock) within a single product document. This approach ensures that all related product information is stored together, making retrieval and management more intuitive.
+
+Implementation Overview
+
+This project is a Node.js + Express application built with Mongoose as the ODM (Object Data Modeling) library for MongoDB.
+
+Key Features & Implementation Details
+
+Schema Design
+
+The Product schema defines core fields such as name, price, category, and description.
+
+A nested array of sub-documents called variants stores product-specific options like:
+
+color
+
+size
+
+stock availability
+
+This design makes it easy to represent multiple variants under one product without creating separate documents.
+
+Data Seeding
+
+A dedicated POST /api/products/seed route is implemented to quickly populate the database with sample product data.
+
+Useful for testing and demonstration purposes without manually inserting documents.
+
+Filtering by Category
+
+The GET /api/products/filter route supports filtering based on top-level fields (e.g., category = Apparel).
+
+Enables retrieval of product lists by categories such as Electronics, Clothing, etc.
+
+Nested Querying with Aggregation
+
+The GET /api/products/variants/:color route demonstrates how to query nested arrays.
+
+Uses MongoDB’s Aggregation Pipeline and the $filter operator to return only the variants that match the requested color inside each product.
+
+For example: querying variants/Red will only return products with a Red variant, ignoring others.
+
+Extensibility
+
+The schema can be easily extended with fields like:
+
+brand
+
+ratings (average user rating)
+
+discounts or offers
+
+tags for keyword-based searching
+
+Future routes can include sorting, pagination, and full-text search.
+
+Tech Stack
+
+Backend: Node.js with Express.js
+
+Database: MongoDB with Mongoose ODM
+
+API Testing: Postman (for seeding, filtering, and querying endpoints)
+
+Benefits of This Approach
+
+Compact Data Storage: All product details (including variants) are grouped within a single document.
+
+Efficient Queries: Avoids multiple joins or lookups by keeping variants embedded.
+
+Scalability: Suitable for real-world e-commerce catalogs where products often have multiple variations.
+
+Flexibility: Easy to extend schema and API routes as the application grows.
