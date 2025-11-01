@@ -1,0 +1,30 @@
+Docker Multi-Stage Build for React Applications
+
+This project demonstrates how to use Docker multi-stage builds to efficiently containerize a React application.
+By separating the build and runtime phases, the final Docker image remains lightweight, secure, and optimized for production.
+
+Key Features
+
+Uses multi-stage Docker builds to separate build and runtime environments.
+
+Reduces final image size by removing unnecessary dependencies and tools.
+
+Ensures consistent application behavior across all environments (development, staging, production).
+
+Improves deployment speed and resource efficiency.
+
+How It Works
+
+Build Stage:
+The React source code is compiled and bundled using Node.js in an isolated environment.
+
+Runtime Stage:
+Only the optimized build output is copied into a minimal web server image (e.g., Nginx) for serving the application.
+
+Benefits
+
+Smaller, faster, and more secure Docker images.
+
+Cleaner separation between build-time and runtime dependencies.
+
+Easy to maintain and scalable for production environments.
