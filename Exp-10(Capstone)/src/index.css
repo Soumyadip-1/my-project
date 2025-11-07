@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Blue–White–Black Theme */
+
+@layer base {
+  :root {
+    /* Core color palette */
+    --primary: 217 91% 60%;          /* Bright blue */
+    --primary-foreground: 0 0% 100%; /* White text on blue */
+    --primary-light: 217 91% 70%;
+    --primary-dark: 217 90% 45%;
+
+    --secondary: 220 15% 96%;        /* Light gray-blue */
+    --secondary-foreground: 220 20% 20%;
+    --secondary-dark: 220 15% 85%;
+
+    --accent: 200 90% 55%;           /* Cyan-blue accent */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 200 90% 65%;
+
+    --background: 0 0% 100%;         /* White background */
+    --foreground: 220 15% 15%;       /* Black/gray text */
+
+    --card: 220 15% 98%;             /* Card light background */
+    --card-foreground: 220 15% 20%;
+
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 10% 40%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 220 15% 97%;
+    --sidebar-foreground: 220 15% 15%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 90%;
+    --sidebar-accent-foreground: 220 15% 15%;
+    --sidebar-border: 220 15% 85%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Gradients & Shadows */
+    --gradient-blue: linear-gradient(135deg, hsl(217 91% 60%), hsl(200 90% 55%));
+    --shadow-soft: 0 4px 16px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 220 15% 90%;
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 100%;
+    --primary: 217 91% 65%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 200 90% 60%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 70%;
+    --border: 220 15% 25%;
+    --ring: 217 91% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    background: linear-gradient(180deg, hsl(220 15% 98%), hsl(0 0% 100%));
+  }
+}
+
+@layer components {
+  /* Card */
+  .modern-card {
+    @apply relative rounded-xl p-6;
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+  }
+
+  .modern-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Modern Button */
+  .btn-modern {
+    @apply rounded-lg px-6 py-3 font-semibold text-white transition-all duration-300;
+    background: var(--gradient-blue);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-modern:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  /* Inputs */
+  .input-modern {
+    @apply border rounded-lg px-4 py-2 focus:outline-none focus:ring-2;
+    border-color: hsl(var(--border));
+    background-color: hsl(var(--card));
+  }
+
+  .input-modern:focus {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.3);
+  }
+
+  /* Text Gradient */
+  .text-blue-gradient {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
