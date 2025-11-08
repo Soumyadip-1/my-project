@@ -1,0 +1,126 @@
+
+
+# PROJECT: Concurrent Ticket Booking API with Seat Locking
+
+---
+
+### 1) Technologies Used
+
+a) **Node.js** – Provides the asynchronous, event-driven runtime environment for executing the server.
+b) **Express.js** – Used as the web framework to define routes, manage requests, and build the RESTful API.
+c) **JavaScript (ES6+)** – Implements the application’s logic, state management, and asynchronous operations.
+
+---
+
+### 2) Project Overview
+
+a) This project is an **interactive REST API** that simulates a ticket booking system.
+b) It demonstrates how to **safely handle concurrent requests** by implementing a temporary seat-locking feature.
+c) The main objective was to practice **state management on the server**, implement asynchronous logic with timers, and design an API that avoids race conditions.
+d) The application provides a **practical foundation** for learning how to build multi-user, stateful backend systems with Node.js.
+
+---
+
+### 3) Project File Structure
+
+The project is kept simple, with all code contained in a single server file for easy readability.
+
+```
+Experiment-12/
+├── node_modules/         # Stores project dependencies (like Express)
+├── package.json          # Defines project metadata and dependencies
+└── index.js              # Main application file with server and API logic
+```
+
+---
+
+### 4) Structure
+
+**API Endpoints & State Management:**
+
+* The application uses an **in-memory object (seats)** as the central datastore.
+* Dedicated endpoints handle the viewing, locking, and confirmation of bookings.
+* Concurrency is managed through a **seat-locking mechanism** that uses timers to release unconfirmed locks.
+
+**Snippets:**
+
+i) **In-Memory State & Configuration** – A JavaScript object acts as the database of seats, while a lock timeout constant defines the lock duration.
+
+```js
+const LOCK_TIMEOUT = 60 * 1000; // 60 seconds
+
+const seats = {
+  '1': { status: 'available' },
+  '2': { status: 'available' },
+  // ... more seats
+};
+```
+
+ii) **Seat Locking (POST /lock/\:seatId)** – Locks a seat if available, records a timestamp, and sets a timer to auto-release the lock if not confirmed.
+
+```js
+app.post('/lock/:seatId', (req, res) => {
+  const seat = seats[seatId];
+  const now = Date.now();
+
+  if (seat.status === 'booked' || (seat.status === 'locked' && (now - seat.lockTimestamp < LOCK_TIMEOUT))) {
+    return res.status(400).json({ message: 'Seat is unavailable' });
+  }
+
+  seat.status = 'locked';
+  seat.lockTimestamp = now;
+
+  setTimeout(() => {
+    if (seats[seatId].status === 'locked' && seats[seatId].lockTimestamp === now) {
+      seats[seatId].status = 'available';
+      // ... log or handle auto-release
+    }
+  }, LOCK_TIMEOUT);
+
+  res.json({ message: `Seat ${seatId} locked successfully.` });
+});
+```
+
+iii) **Booking Confirmation (POST /confirm/\:seatId)** – Validates that a seat has an active lock before permanently marking it as booked.
+
+```js
+app.post('/confirm/:seatId', (req, res) => {
+  const seat = seats[seatId];
+  const now = Date.now();
+
+  if (seat.status !== 'locked') {
+    return res.status(400).json({ message: 'Seat is not locked' });
+  }
+
+  if (now - seat.lockTimestamp > LOCK_TIMEOUT) {
+    return res.status(400).json({ message: 'Lock has expired.' });
+  }
+
+  seat.status = 'booked';
+  delete seat.lockTimestamp;
+  res.json({ message: `Seat ${seatId} booked successfully!` });
+});
+```
+
+---
+
+### 5) Learning Outcomes
+
+a) Learned how to use **in-memory objects** for fast prototyping of server-side state management.
+b) Practiced building a **RESTful API** with clearly defined endpoints for resource operations.
+c) Understood the **HTTP request/response cycle** in Express, including the use of URL parameters, JSON bodies, and status codes.
+d) Implemented **server-side validation** to cover different scenarios and edge cases.
+e) Gained experience with **asynchronous operations** using `setTimeout` to simulate concurrency control and prevent race conditions.
+
+---
+
+### 6) Key Concepts
+
+a) In-Memory State Management
+b) RESTful API Design & Routing
+c) HTTP Request/Response Cycle (`req`, `res`)
+d) URL Parameters (`req.params`)
+e) Asynchronous Logic (`setTimeout`)
+f) Concurrency Control & Race Condition Handling
+
+---

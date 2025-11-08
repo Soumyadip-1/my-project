@@ -1,0 +1,81 @@
+Objective
+
+The objective of this experiment is to understand how to design and implement a MongoDB data model using nested documents to represent a real-world e-commerce catalog. It emphasizes the practical application of MongoDB’s flexible schema to handle complex relationships, such as multiple product variants, within a single collection. This experiment aims to strengthen your knowledge of schema design, data modeling, and query handling in MongoDB.
+
+Introduction
+
+MongoDB is a popular NoSQL database that stores data in a document-oriented format using BSON (Binary JSON). Unlike traditional relational databases, MongoDB allows storing hierarchical or nested data structures directly in a single document. This feature is particularly useful in e-commerce systems where products can have multiple attributes or variants such as color, size, and stock availability.
+
+In a conventional relational database, such relationships often require multiple tables and complex joins. MongoDB simplifies this by allowing nested arrays and objects, enabling related information to reside within a single product document. This approach improves performance, reduces the need for joins, and supports dynamic schema evolution.
+
+Experiment Overview
+
+The experiment focuses on creating a MongoDB collection to represent an e-commerce catalog. Each product in the catalog contains general information such as the product name, price, and category. In addition, each product has an array of variants that capture different options like color, size, and stock levels.
+
+Key aspects of this experiment include:
+
+Designing a flexible data model that accommodates multiple variants per product.
+
+Understanding how nested documents are structured in MongoDB.
+
+Learning how to query and retrieve both top-level and nested data efficiently.
+
+Projecting specific fields from nested documents to minimize data transfer and improve query performance.
+
+Methodology
+
+Data Modeling:
+
+Identify the key attributes of a product, including name, price, category, and variants.
+
+Design a nested document structure for variants, ensuring that each variant contains properties like color, size, and stock availability.
+
+This approach mimics real-world product hierarchies and supports complex queries without joining multiple collections.
+
+Data Insertion:
+
+Populate the catalog with sample products to demonstrate different variants.
+
+Ensure that products across various categories include multiple options for testing queries effectively.
+
+Querying and Retrieval:
+
+Retrieve all products to verify data insertion.
+
+Filter products by categories to demonstrate how MongoDB handles selective queries.
+
+Access nested variant information to show how dot notation or similar methods allow filtering based on nested attributes.
+
+Project only relevant fields to optimize performance and reduce unnecessary data retrieval.
+
+Analysis:
+
+Observe how MongoDB stores hierarchical data in a single document.
+
+Analyze the efficiency of queries on nested structures versus traditional relational joins.
+
+Understand how this approach simplifies data management in e-commerce applications.
+
+Observations
+
+Nested documents allow all relevant product information, including variants, to be stored in a single document.
+
+Queries can efficiently access both top-level and nested fields without complex joins.
+
+MongoDB’s schema flexibility supports adding new attributes to products or variants without redesigning the entire collection.
+
+Projecting specific fields helps reduce memory usage and improves query performance.
+
+The structure is highly suitable for e-commerce catalogs where products often have multiple variations.
+
+Conclusion
+
+This experiment demonstrates the power of MongoDB’s nested document structure in modeling complex real-world entities like an e-commerce catalog. You learned how to design flexible and scalable schemas, insert hierarchical data, and perform queries on both top-level and nested fields. This approach reduces database complexity, improves performance, and supports dynamic data requirements, making it ideal for modern applications in retail and other domains.
+
+Applications
+
+E-commerce platforms for product catalogs.
+
+Inventory management systems with multiple product variants.
+
+Content management systems that require flexible and hierarchical data storage.

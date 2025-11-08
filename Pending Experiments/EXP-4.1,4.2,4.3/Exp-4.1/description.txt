@@ -1,0 +1,120 @@
+
+# PROJECT: CLI Employee Management System
+
+---
+
+### 1) Technologies Used
+
+a) **Node.js** – Used as the runtime environment to execute the command-line application.
+b) **Node.js Readline Module** – Enables the creation of an interactive command-line interface for handling user input and output.
+c) **JavaScript (ES6+)** – Provides the logic, data storage, and control flow for the application.
+
+---
+
+### 2) Project Overview
+
+a) This project is a **command-line interface (CLI) application** for managing a list of employees.
+b) It demonstrates how to build an **interactive terminal-based program**, handle user inputs step-by-step, and perform operations on in-memory data.
+c) The main objective was to **practice Node.js fundamentals**, including built-in modules and asynchronous callback handling, without using external databases or frameworks.
+d) The application serves as a **beginner-friendly introduction** to building interactive scripts and utilities with Node.js.
+
+---
+
+### 3) Project File Structure
+
+The project is simple and self-contained, with all logic placed in one file.
+
+```
+Experiment-10/
+├── node_modules/         # Not needed since no external libraries are used
+├── package.json          # Project metadata
+└── app.js                # Main application file containing all the code
+```
+
+---
+
+### 4) Structure
+
+**Application Loop & In-Memory Data:**
+
+* The state of the application is stored in a **JavaScript array** of employee objects.
+* A central `displayMenu` function works as the **main loop**, printing the options, accepting user input, and calling the respective function.
+
+**Snippets:**
+
+i) **In-Memory Data Store** – Employees are stored in an array that serves as the single source of truth.
+
+```js
+let employees = [];
+```
+
+ii) **Main Menu (`displayMenu`)** – Displays options and uses `rl.question` to handle user input.
+
+```js
+function displayMenu() {
+  console.log('\n===== Employee Management System =====');
+  // ... console.log for options ...
+  rl.question('Enter your choice: ', (choice) => {
+    switch (choice.trim()) {
+      case '1':
+        addEmployee();
+        break;
+      // ... other cases ...
+    }
+  });
+}
+```
+
+iii) **Add Employee (`addEmployee`)** – Collects employee name and ID sequentially, then stores them in the array.
+
+```js
+function addEmployee() {
+  rl.question('Enter employee name: ', (name) => {
+    rl.question('Enter employee ID: ', (id) => {
+      employees.push({ name, id });
+      console.log(`\nEmployee ${name} (ID: ${id}) added successfully.`);
+      displayMenu(); // Return to menu
+    });
+  });
+}
+```
+
+iv) **Remove Employee (`removeEmployee`)** – Finds an employee by ID and removes them using `splice`.
+
+```js
+function removeEmployee() {
+  rl.question('Enter employee ID to remove: ', (idToRemove) => {
+    const index = employees.findIndex(employee => employee.id === idToRemove);
+    if (index !== -1) {
+      const removedEmployee = employees.splice(index, 1);
+      console.log(`\nEmployee ${removedEmployee[0].name} removed successfully.`);
+    } else {
+      console.log('\nEmployee not found.');
+    }
+    displayMenu();
+  });
+}
+```
+
+---
+
+### 5) Learning Outcomes
+
+a) Learned how to use the **readline module** for building CLI-based interactive applications.
+b) Practiced building a **stateful terminal application** with persistent data in memory.
+c) Understood handling of **asynchronous user input** with nested callbacks.
+d) Implemented key array operations such as **add, view, and delete**.
+e) Learned how to design a CLI application with a **persistent, menu-driven loop**.
+
+---
+
+### 6) Key Concepts
+
+a) Interactive CLI Applications
+b) Node.js Built-in Modules (`readline`)
+c) In-Memory Data Handling
+d) Asynchronous Callback Management
+e) User Input Processing
+f) Array Operations (`push`, `forEach`, `findIndex`, `splice`)
+
+---
